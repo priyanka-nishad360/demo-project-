@@ -1,0 +1,31 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: List files in directory
+        run: ls -l ~/runners/scripts/
+        
+      - name: Run script
+        run: |
+          chmod +x ./build.sh
+          ./build.sh
+          
+      - name: Debug
+        run: ls -l ./build.sh
+
+      - name: Run Bash Script
+        run: bash ./build.sh
