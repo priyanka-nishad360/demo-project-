@@ -1,0 +1,10 @@
+name = "demo project"
+type = "nextjs" 
+
+account_id = "e74ad06af18cf677ba4bd286b3fe1e8e"
+
+workers_dev = true
+route = ""
+zone_id = ""
+
+
